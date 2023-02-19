@@ -1,1 +1,55 @@
 - Difference between Abstract Data Type and Data Structure => An Abstract Data Type (ADT) is an abstraction of the data structure whereas a data structure is an implementation of an ADT e.g an ADT might be a vehicle where a data structure will be a Car, Motorbike or Lorry, an ADT might be a List where a data structure will be a Linked List or Dynamic Array.
+
+- Complexities ordered from smallest to largest =>
+	- Constant Time => O(1)
+	- Logarithmic Time => O(log(n))
+	- Linear Time => O(n)
+	- Linearithmic Time => O(nlog(n))
+	- Quadratic Time => O(n^2)
+	- Cubic Time => O(n^3)
+	- Exponential Time => O(b^n) where b > 1
+	- Factorial Time => O(n!)
+
+- In most cases (interview questions) we have the following being true => 
+	O(n + c) = O(n)
+	O(cn) = O(n) where c > 0
+	if f(n) = 7log(n)^3 + 15n^2 + 2n^3 + 8
+	then O(f(n)) = O(n^3) i.e pick the largest entity
+
+- Interesting example of a constant time O(1) operation => 
+	i = 0
+	while(i < 11) {
+		i = i+1
+	}
+
+- Interesting example of a linear time O(n) operation => 
+	i = 0
+	while(i < n) {
+		i = i + 3
+	}
+
+	- Note that O(n) = n/3 = n
+
+- Interesting example of a quadractic time O(n^2) operation => 
+	for(i = 0; i < n; i++) {
+		for(j = i; j < n; j++) {
+			// operation
+		}
+	}
+
+	- Note that the second loop does n + (n-1) + (n-2) + ... + 3 + 2 + 1
+	- This turns out to be n(n+1)/2
+	- So we have O(n(n+1)/2) = O(n^2/2 + n/2) = O(n^2)
+
+- Example of a logarithmic time O(log(n)) operation => 
+	- Binary Search:
+	low = 0
+	high = n - 1
+	while low <= high {
+		mid = (low + high) / 2
+		if (array[mid] == value) return mid
+		else if(array[mid] < value) low = mid + 1
+		else if(array[mid] > value) high = mid - 1
+	}
+
+	- Note that O(n) = O(log2(n)) = O(log(n))
