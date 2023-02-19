@@ -1,0 +1,1 @@
+- Difference between Abstract Data Type and Data Structure => An Abstract Data Type (ADT) is an abstraction of the data structure whereas a data structure is an implementation of an ADT e.g an ADT might be a vehicle where a data structure will be a Car, Motorbike or Lorry, an ADT might be a List where a data structure will be a Linked List or Dynamic Array.
