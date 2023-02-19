@@ -53,3 +53,9 @@
 	}
 
 	- Note that O(n) = O(log2(n)) = O(log(n))
+
+- Examples of other common Big O operations =>
+	- Finding all subsets of a set => O(2^n)
+	- Finding all permutations of a string => O(n!)
+	- Sorting using mergeSort => O(nlog(n))
+	- Iterating over all the cells of a matrix of size n * m => O(nm)
