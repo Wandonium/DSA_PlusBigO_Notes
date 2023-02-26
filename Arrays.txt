@@ -4,3 +4,10 @@
     - insertion => O(n) for dynamic arrays. Does not make sense for static arrays
     - appending => O(1) for dynamic arrays. Does not make sense for static arrays
     - deletion => O(n) for dynamic arrays. Does not make sense for static arrays
+
+- Dynamic array => array that grows and shrinks in size as needed i.e does not have a fixed length like a static array e.g ArrayList in Java, Vector in C++
+
+- How to create a dynamic array using static arrays =>
+    - Create a static array with an initial capacity
+    - Add elements to the initial static array while keeping track of the capacity.
+    - If adding a new element will exceed the capacity, create a new static array with double the capacity and copy all elements into the new static array.
