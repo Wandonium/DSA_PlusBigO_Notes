@@ -11,3 +11,52 @@
     - Create a static array with an initial capacity
     - Add elements to the initial static array while keeping track of the capacity.
     - If adding a new element will exceed the capacity, create a new static array with double the capacity and copy all elements into the new static array.
+
+- Dynamic array source code =>
+    - In Java:
+        class DynamicArray {
+            private int size;
+            private String[] array;
+
+            public DynamicArray() {
+                size = 2;
+                array = new String[size];
+            }
+
+            public boolean isFull() {
+                return array[size] != null;
+            }
+
+            public void append(String val) {
+                if(isFull()) {
+                    size = size * 2;
+                    array = new String[size];
+                } else {
+                    for(int i = 0; i < size; i++) {
+                        if(array[i] == null) {
+                            array[i] = val;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            public void insert(String val, int index) {
+                if(index < 0 || index >= size) {
+                    throw new Exception("Invalid array index");
+                } else {
+                    array[index] = val;
+                }
+            }
+
+            public void delete(int index) {
+                if(index < 0 || index >= size) {
+                    throw new Exception("Invalid array index");
+                } else {
+                    for(int i = index; i < size-1; i++) {
+                        array[i] = array[i+1];
+                    }
+                    array[size-1] = null;
+                }
+            }
+        }
