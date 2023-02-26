@@ -2,3 +2,10 @@
     - Singly linked list => Each node has a pointer to the next node. The tail node points to null e.g
     a -> b -> c -> null
     - Doubly linked list => Each node has a pointer to the next node and a pointer to the previous node e.g a <-> b <-> c -> null
+
+- Doubly linked lists take up twice the memory of Singly linked lists because of the extra pointers to previous nodes. In a 64bit machine pointers take up 8bytes each while in a 32bit machine they take up 4bytes each.
+
+- BigO complexity for linked lists =>
+    - search => O(n) for both singly and doubly linked lists.
+    - insertion at head => O(1) for both singly and doubly linked lists.
+    - insertion at tail => O(1) for both singly and doubly linked lists.
