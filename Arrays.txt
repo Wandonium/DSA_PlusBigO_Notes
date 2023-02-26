@@ -1,0 +1,6 @@
+- BigO complexity for arrays =>
+    - access => O(1) for both static and dynamic arrays; mostly because of use of indexes
+    - search => O(n) for both static and dynamic arrays
+    - insertion => O(n) for dynamic arrays. Does not make sense for static arrays
+    - appending => O(1) for dynamic arrays. Does not make sense for static arrays
+    - deletion => O(n) for dynamic arrays. Does not make sense for static arrays
