@@ -60,3 +60,8 @@
                 }
             }
         }
+    - Ways to improve the above code =>
+        - Make use of generics instead of a String array
+        - Make use of two variables to store actual size vs initial size of array
+        - Ref: https://github.com/williamfiset/Algorithms/blob/master/src/main/java/com/williamfiset/algorithms/datastructures/dynamicarray/IntArray.java
+        - Ref: https://github.com/williamfiset/DEPRECATED-data-structures/blob/master/com/williamfiset/datastructures/dynamicarray/DynamicArray.java
