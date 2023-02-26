@@ -1,0 +1,4 @@
+- Types of linked lists =>
+    - Singly linked list => Each node has a pointer to the next node. The tail node points to null e.g
+    a -> b -> c -> null
+    - Doubly linked list => Each node has a pointer to the next node and a pointer to the previous node e.g a <-> b <-> c -> null
