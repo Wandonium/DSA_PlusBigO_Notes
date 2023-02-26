@@ -9,3 +9,6 @@
     - search => O(n) for both singly and doubly linked lists.
     - insertion at head => O(1) for both singly and doubly linked lists.
     - insertion at tail => O(1) for both singly and doubly linked lists.
+    - removing at head => O(1) for both singly and doubly linked lists.
+    - removing at tail => O(n) for singly linked list and O(1) for doubly linked lists.
+    - removing in the middle => O(1) for both singly and doubly linked lists.
