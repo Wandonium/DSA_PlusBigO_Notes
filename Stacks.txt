@@ -1,0 +1,6 @@
+- Stack is a LIFO (Last In First Out) structure.
+- Uses of stacks =>
+    - Undo mechanism in text editors
+    - Compiler syntax checking when matching brackets and braces.
+    - Used to support recursion by keeping track of previous function calls.
+    - Used to do Depth First Search on a graph.
