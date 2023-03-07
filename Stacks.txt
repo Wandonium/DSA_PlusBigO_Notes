@@ -4,3 +4,10 @@
     - Compiler syntax checking when matching brackets and braces.
     - Used to support recursion by keeping track of previous function calls.
     - Used to do Depth First Search on a graph.
+
+- BigO complexity for stacks =>
+    - pushing: O(1)
+    - popping: O(1)
+    - peeking: O(1)
+    - searching: O(n)
+    - size: O(1)
