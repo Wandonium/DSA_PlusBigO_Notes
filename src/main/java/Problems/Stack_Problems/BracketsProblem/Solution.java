@@ -11,7 +11,8 @@ public class Solution {
         list.add("[()]))()");
         list.add("[]{}({})");
         for(String item: list) {
-            System.out.println(item + " result: " + linkedListStack(item));
+            //System.out.println(item + " result: " + linkedListStack(item));
+            System.out.println(item + " result: " + javaUtilStack(item));
         }
     }
 
@@ -43,5 +44,19 @@ public class Solution {
             //System.out.println("*********************");
         }
         return list.isEmpty();
+    }
+
+    public static boolean javaUtilStack(String bracketString) {
+        Stack<Character> stack = new Stack<Character>();
+        char[] brackets = bracketString.toCharArray();
+        for(char bracket: brackets) {
+            char rev = getReversedBracket(bracket);
+            if(bracket == '(' || bracket == '[' || bracket == '{') {
+                stack.push(bracket);
+            } else if(stack.isEmpty() || stack.pop() != rev) {
+                return false;
+            }
+        }
+        return stack.isEmpty();
     }
 }
