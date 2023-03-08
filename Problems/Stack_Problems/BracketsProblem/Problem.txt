@@ -1,4 +1,5 @@
-Problem: Given a string made up of the following brackets: ()[]{}, determine whether the brackets properly match. e.g:
+Problem: Given a string made up of the following brackets: ()[]{},
+determine whether the brackets properly match. e.g:
     - [{}] => valid
     - (()()) => valid
     - {] => invalid
@@ -25,3 +26,16 @@ My Solution:
             
         }
     }
+
+Solution pseudocode:
+    Let S be a stack
+    For bracket in bracket_string:
+        rev = getReversedBracket(bracket)
+
+        If isLeftBracket(bracket):
+            S.push(bracket)
+        Else If S.isEmpty() or S.pop() != rev:
+            return false // Invalid
+    return S.isEmpty() // Valid if S is empty
+
+Solution in code: check ./Solution.java file
