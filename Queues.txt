@@ -16,19 +16,27 @@
 - Queue implementation in Java => https://github.com/williamfiset/DEPRECATED-data-structures/tree/master/com/williamfiset/datastructures/queue
 
 - Static Array based queue => 
+    import java.util.Iterator;
+
     public class ArrayBasedQueue<T> implements Iterable {
         private int length;
         private T[] queue;
+        private int front;
+        private int rear;
 
         public ArrayBasedQueue(int length) {
             this.length = length;
-            queue = new T[length];
+            queue = (T[]) new Object[length];
+            front = 0;
+            rear = -1;
         }
 
         public ArrayBasedQueue(int length, T firstElem) {
             this.length = length;
-            queue = new T[length];
+            queue = (T[]) new Object[length];
             queue[0] = firstElem;
+            front = 0;
+            rear = -1;
         }
 
         public int size() {
@@ -41,37 +49,74 @@
 
         public T peek() {
             if(isEmpty()) throw new RuntimeException("Queue is empty!");
-            return queue[0];
+            return queue[front];
         }
 
-        public T poll() {
+        public T dequeue() {
             if(isEmpty()) throw new RuntimeException("Queue is empty!");
             else {
-                T head = queue[0];
-                for(int i=0;i<length-1;i++) {
-                    queue[i] = queue[i+1];
-                }
+                T head = queue[front];
+                front++;
                 return head;
             }
         }
 
-        public void offer(T elem) {
-            int idx = 0;
-            boolean foundTail = false;
-            while(!foundTail) {
-                if(idx >= length) {
-                    T[] newQueue = new T[length * 2];
-                    for(int i = 0; i < length; i++) {
-                        newQueue[i] = queue[i];
+        public boolean isFull() {
+            return rear == length - 1;
+        }
+
+        public void enqueue(T elem) {
+                /*int idx = 0;
+                boolean foundTail = false;
+                while(!foundTail) {
+                    if(idx >= length) {
+                        T[] newQueue = new T[length * 2];
+                        for(int i = 0; i < length; i++) {
+                            newQueue[i] = queue[i];
+                        }
+                        queue = newQueue;
+                        queue[length] = elem;
+                        length = length * 2;
+                        foundTail = true;
+                    } else if(queue[idx] == null) {
+                        foundTail = true;
+                        queue[idx] = elem;
                     }
-                    queue = newQueue;
-                    queue[length] = elem;
-                    length = length * 2;
-                    foundTail = true;
-                } else if(queue[idx] == null) {
-                    foundTail = true;
-                    queue[idx] = elem;
+                }*/
+            if(isFull()) throw new RuntimeException("Queue is full!");
+            rear++;
+            queue[rear] = elem;
+        }
+
+        public static void main(String[] args)   {
+            ArrayBasedQueue<Integer> queue = new ArrayBasedQueue<>(10);
+            queue.enqueue(2);
+            queue.enqueue(3);
+            System.out.println("Item deleted from queue: " + queue.dequeue());
+            System.out.println("Item deleted from queue: " + queue.dequeue());
+            queue.enqueue(5);
+            System.out.println("Item deleted from queue: " + queue.dequeue());
+        }
+
+        @Override
+        public java.util.Iterator<T> iterator() {
+            return new java.util.Iterator<T>() {
+                int index = 0;
+
+                @Override
+                public boolean hasNext() {
+                    return index < length;
                 }
-            }
+
+                @Override
+                public T next() {
+                    return queue[index++];
+                }
+
+                @Override
+                public void remove() {
+                    throw new UnsupportedOperationException();
+                }
+            };
         }
     }
