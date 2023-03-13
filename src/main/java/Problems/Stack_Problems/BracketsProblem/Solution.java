@@ -2,6 +2,10 @@ package Problems.Stack_Problems.BracketsProblem;
 
 import java.util.*;
 
+// Moving to non-maven folder structure so as to practice solutions to problems
+// without use of IntelliJ IDE. Getting used to coding on a whiteboard or online 
+// text editor.
+
 public class Solution {
     public static void main(String[] args) {
         ArrayList<String> list = new ArrayList<String>();
