@@ -11,3 +11,5 @@
     - peeking: O(1)
     - searching: O(n)
     - size: O(1)
+
+- Stack implementation in Java => https://github.com/williamfiset/DEPRECATED-data-structures/tree/master/com/williamfiset/datastructures/stack 

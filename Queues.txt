@@ -12,3 +12,5 @@
     - Contains: O(n)
     - Removal: O(n)
     - IsEmpty: O(1)
+
+- Queue implementation in Java => https://github.com/williamfiset/DEPRECATED-data-structures/tree/master/com/williamfiset/datastructures/queue
