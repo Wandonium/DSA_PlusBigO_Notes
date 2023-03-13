@@ -4,7 +4,7 @@ Problem: Tower of Hanoi is a mathematical puzzle where we have three rods (A, B,
     - No disk may be placed on top of a smaller disk.
 Check out tower-of-hanoi.png image for visualization.
 
-Solution explanation => Move N-1 disks from source rod A to auxillary rod B, move last disk N to destination rod C then move N-1 disks from rod B to rod C.
+Solution explanation => Move N-1 disks from source rod A to auxillary rod B, move last disk N to destination rod C then move N-1 disks from rod B to rod C. Tip: solve the problem of moving 2 disks, then 3 disks and finally 4 disks.
 
 Solution pseudocode => 
     tower(disk, src, aux, dest) {
