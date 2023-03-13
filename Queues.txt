@@ -14,3 +14,64 @@
     - IsEmpty: O(1)
 
 - Queue implementation in Java => https://github.com/williamfiset/DEPRECATED-data-structures/tree/master/com/williamfiset/datastructures/queue
+
+- Static Array based queue => 
+    public class ArrayBasedQueue<T> implements Iterable {
+        private int length;
+        private T[] queue;
+
+        public ArrayBasedQueue(int length) {
+            this.length = length;
+            queue = new T[length];
+        }
+
+        public ArrayBasedQueue(int length, T firstElem) {
+            this.length = length;
+            queue = new T[length];
+            queue[0] = firstElem;
+        }
+
+        public int size() {
+            return length;
+        }
+
+        public boolean isEmpty() {
+            return length == 0;
+        }
+
+        public T peek() {
+            if(isEmpty()) throw new RuntimeException("Queue is empty!");
+            return queue[0];
+        }
+
+        public T poll() {
+            if(isEmpty()) throw new RuntimeException("Queue is empty!");
+            else {
+                T head = queue[0];
+                for(int i=0;i<length-1;i++) {
+                    queue[i] = queue[i+1];
+                }
+                return head;
+            }
+        }
+
+        public void offer(T elem) {
+            int idx = 0;
+            boolean foundTail = false;
+            while(!foundTail) {
+                if(idx >= length) {
+                    T[] newQueue = new T[length * 2];
+                    for(int i = 0; i < length; i++) {
+                        newQueue[i] = queue[i];
+                    }
+                    queue = newQueue;
+                    queue[length] = elem;
+                    length = length * 2;
+                    foundTail = true;
+                } else if(queue[idx] == null) {
+                    foundTail = true;
+                    queue[idx] = elem;
+                }
+            }
+        }
+    }
