@@ -1,0 +1,52 @@
+Problem: Tower of Hanoi is a mathematical puzzle where we have three rods (A, B, and C) and N disks. Initially, all the disks are stacked in decreasing value of diameter i.e., the smallest disk is placed on the top and they are on rod A. The objective of the puzzle is to move the entire stack to another rod (here considered C), obeying the following simple rules: 
+    - Only one disk can be moved at a time.
+    - Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack i.e. a disk can only be moved if it is the uppermost disk on a stack.
+    - No disk may be placed on top of a smaller disk.
+Check out tower-of-hanoi.png image for visualization.
+
+Solution explanation => Move N-1 disks from source rod A to auxillary rod B, move last disk N to destination rod C then move N-1 disks from rod B to rod C.
+
+Solution pseudocode => 
+    tower(disk, src, aux, dest) {
+        IF disk is equal to 1 THEN
+            move disk from src to dest
+        ELSE
+            tower(disk - 1, src, dest, aux)
+            move disk from src to dest
+            tower(disk - 1, aux, dest, src)  
+    }
+
+Solution in Java =>
+    import java.util.Stack;
+    public class TowerOfHanoi {
+        public static void tower(int numOfDisks, Stack src, Stack aux, Stack dest) {
+            if(numOfDisks == 1) {
+                dest.push(src.pop());
+            } else {
+                tower(numOfDisks - 1, src, dest, aux);
+                dest.push(src.pop());
+                tower(numOfDisks - 1, aux, src, dest);
+            }
+        }
+
+        public static void main(String[] args) {
+            Stack<Integer> src = new Stack<Integer>();
+            int length = 4;
+            for(int i = length; i > 0; i--) {
+                src.push(i);
+            }
+            Stack<Integer> aux = new Stack<Integer>();
+            Stack<Integer> dest = new Stack<Integer>();
+            System.out.println("Before starting game...");
+            System.out.println("source stack: " + src);
+            System.out.println("auxillary stack: " + aux);
+            System.out.println("destination stack: " + dest);
+            tower(length, src, aux, dest);
+            System.out.println("After playing game...");
+            System.out.println("source stack: " + src);
+            System.out.println("auxillary stack: " + aux);
+            System.out.println("destination stack: " + dest);            
+        }
+    }
+
+Solution time complexity => (2^n) - 1
