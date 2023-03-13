@@ -1,0 +1,14 @@
+- What is a Queue => it's a linear data structure that models real life queues with two primary operations enqueue and dequeue. It's a FIFO structure i.e we enqueue from the front of the queue and dequeue from the back of the queue.
+
+- Uses of queues => 
+    - Modeling real life queues e.g. managing seats in a Movie Theater app, managing orders in a Food Delivery app.
+    - Web server request management where we need a FIFO queue for requests.
+    - Breadth first search graph traversal.
+
+- Time complexity for Queues => 
+    - Enqueue: O(1)
+    - Dequeue: O(1)
+    - Peeking: O(1)
+    - Contains: O(n)
+    - Removal: O(n)
+    - IsEmpty: O(1)
