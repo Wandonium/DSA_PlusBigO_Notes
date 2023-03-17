@@ -59,3 +59,5 @@
 	- Finding all permutations of a string => O(n!)
 	- Sorting using mergeSort => O(nlog(n))
 	- Iterating over all the cells of a matrix of size n * m => O(nm)
+
+- Progress Timestamp => 02:13:07

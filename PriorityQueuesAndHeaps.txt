@@ -55,5 +55,18 @@
     - left = 2i+1
     - right = 2i + 2
     - to get parent of current node where index of current node is i => (i - 1) / 2
+    - Note that because we are using Arrays inserting to the left-most node in the binary heap simply becomes inserting into the end of the Array!.
 
 - Timestamp for bubbling up elements when inserting into binary heap => 01:56:22
+- Timestamp for removing elements from binary heap => 01:59:42
+
+- Polling binary heap => removing the element at the root node
+- When polling, we swap the root node with the last node (right most node on last layer of tree), remove the element then bubble down the new (just swapped) root node to keep the heap invariant. While bubbling down we select the child node that is smallest in a min heap and vice versa for a max heap to swap with. If the child nodes are equal we select the left one.
+
+- When removing an element that is not at the root node => 
+    - we search for the element in the tree, 
+    - swap it with the last node, 
+    - remove it then bubble up/down the swapped element until we are back at the heap invariant. 
+    - If the swapped element is not at the last layer of the tree then bubble it down since we know that all elements up the tree satisfy the heap invariant.
+    
+- The first step in the above takes linear time O(n) to do, so to improve this we can use a HashTable to map binary heap nodes (keys) to their indexes (values). This will cause a problem if there are multiple nodes that have the same value so to solve this we can store multiple indexes for a single node i.e the keys in our HashTable/HashMap will be the nodes while the values will be arrays of indexes.
