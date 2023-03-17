@@ -8,3 +8,31 @@
            6     7                                   1      2 
           / \   / \                                 /  \   / \
          3   2  4  5                               4    5 6   7
+
+- Ref links for Heap vs Priority Queue =>
+    - https://en.wikipedia.org/wiki/Heap_(data_structure)
+    - https://en.wikipedia.org/wiki/Priority_queue
+    - https://softwareengineering.stackexchange.com/questions/254947/difference-between-a-heap-and-a-priority-queue
+
+- Difference between a Heap and a Priority Queue => a Priority Queue is an Abstract Data Type (ADT) while a heap is an implementation of the Priority Queue ADT. Check the BigO_Notes.txt file for definition of an ADT. Also note that Priority Queues can be implemented in other ways other than using heaps e.g using an unordered array.
+
+- Timestamp for questions on whether a binary tree is a heap or not (if the tree satisfies the heap invariant or not) => 01:37:57
+- Note: all heaps must be trees. A tree that contains a cycle is not a valid heap!
+
+- Uses of Priority Queues => 
+    - In certain implementations of Dijkstra's Shortest Path algorithm
+    - When fetching the 'next best' or 'next worst' element
+    - In Huffman coding for lossless data compression
+    - In Best First Search algorithms e.g A* algorithms
+    - In Minimum Spanning Tree algorithms
+
+- Time complexity for Priority Queue implemented as Binary Heap => 
+    - Binary Heap construction => O(n)
+    - Polling/Removing => O(log(n)) coz you have to sort elements to retain heap invariant
+    - Peeking => O(1)
+    - Adding => O(log(n))
+    - Naive removing => O(n)
+    - Advanced removing using hash table => O(log(n))
+    - Naive contains => O(n)
+    - Contains using hash table => O(1)
+    - Note that hash table adds overhead to Priority Queue implementation and takes up linear space complexity.
