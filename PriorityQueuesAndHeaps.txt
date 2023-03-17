@@ -54,3 +54,6 @@
     - parent = i
     - left = 2i+1
     - right = 2i + 2
+    - to get parent of current node where index of current node is i => (i - 1) / 2
+
+- Timestamp for bubbling up elements when inserting into binary heap => 01:56:22
