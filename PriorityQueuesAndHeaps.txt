@@ -35,4 +35,22 @@
     - Advanced removing using hash table => O(log(n))
     - Naive contains => O(n)
     - Contains using hash table => O(1)
-    - Note that hash table adds overhead to Priority Queue implementation and takes up linear space complexity.
+    - Note that hash table adds overhead to Priority Queue (PQ) implementation and takes up linear space complexity.
+
+- Turning Min PQs to Max PQs => 
+    - why: coz most programming languages only provide an implementation of one and not both
+    - Method 1: negate the comparable interface used for the PQ. E.g turn x<=y to x>=y not x>y
+    - Method 2: for numbers, negate the number before insertion and after polling/removing.
+
+- A few types of heaps =>
+    - Binary Heap => A binary tree that supports the heap invariant. In a binary tree every node has only two child nodes.
+    - Fibonacci Heap
+    - Binomial Heap
+    - Pairing Heap etc.
+
+- Complete Binary Tree => a tree where every level is completely filled and all the nodes are as far left as possible.
+
+- Canonical way of representing a binary heap => using Arrays. The root node is usually placed at index 0. If a parent node is at array index i then the left node will be at index 2i + 1 while the right node will be at array index 2i + 2 i.e:
+    - parent = i
+    - left = 2i+1
+    - right = 2i + 2
