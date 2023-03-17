@@ -1,0 +1,10 @@
+- What is a Priority Queue => a queue where each element has a certain priority which determines the order in which elements are removed from the queue.
+
+- For instance, if the queue holds integer values and the priority given is the lowest integer first then how does the priority queue know which is the lowest integer without comparing it to all the integers already in the queue? It makes use of a heap.
+
+- What is a Heap? => a heap is a specialized tree-based data structure that satisfies the heap property: in a max heap, for any given node C, if P is a parent node of C, then the key of P is greater than or equal to the key of C. In a min heap, the key of P is less than or equal to the key of C, i.e:
+    max heap: 8                               min heap: 0
+            /   \                                     /   \
+           6     7                                   1      2 
+          / \   / \                                 /  \   / \
+         3   2  4  5                               4    5 6   7
