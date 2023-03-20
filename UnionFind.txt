@@ -1,0 +1,3 @@
+- What is the Union Find => it's a data structure that keeps track of elements which are split into one or more disjoint sets. It has two primary operations: 
+    - Find => tells you what group a given element belongs to. 
+    - Union => merges two groups together.
