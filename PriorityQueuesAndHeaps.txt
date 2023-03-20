@@ -70,3 +70,5 @@
     - If the swapped element is not at the last layer of the tree then bubble it down since we know that all elements up the tree satisfy the heap invariant.
     
 - The first step in the above takes linear time O(n) to do, so to improve this we can use a HashTable to map binary heap nodes (keys) to their indexes (values). This will cause a problem if there are multiple nodes that have the same value so to solve this we can store multiple indexes for a single node i.e the keys in our HashTable/HashMap will be the nodes while the values will be arrays of indexes.
+
+- Priority Queue implementation in Java => https://github.com/williamfiset/DEPRECATED-data-structures/blob/master/com/williamfiset/datastructures/priorityqueue/BinaryHeap.java
