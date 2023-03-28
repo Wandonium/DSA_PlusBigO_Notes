@@ -1,0 +1,2 @@
+- Ways to generate ideas for a problem's solution during interviews =>
+    - Simplify the task => solve a simpler version of the problem then see if that helps you find a solution to the original problem.
