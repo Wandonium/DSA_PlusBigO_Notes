@@ -1,0 +1,18 @@
+Sample pseudocode:
+
+- init counter to 2
+- init temp to 0
+- if array.length = 1 return 1
+- else if array.length = 2 return 2
+- else if array[0] > array [1]:
+    temp = true;
+- else:
+    temp = false;
+
+- for(int index = 0; index < array.length - 2; index++):
+    if (temp and array[index] < array[index + 1]) ||
+        (!temp and array[index] > array[index + 1]):
+        temp = !temp;
+        counter++;
+- return counter;
+
